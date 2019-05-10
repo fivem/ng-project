@@ -4,6 +4,7 @@ import { NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import  { NewTaskModule } from './new-task/new-task.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AppComponent } from './app.component';
   imports: [
     NgbModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NewTaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
