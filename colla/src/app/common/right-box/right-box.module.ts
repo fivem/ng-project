@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NewTaskComponent } from './new-task.component';
 import { Routes, RouterModule } from '@angular/router';
-const routes: Routes = [
-  {
-    path: 'newTask',
-    component: NewTaskComponent
-  }
-];
+import {RightBoxComponent} from "./right-box.component";
+
+const routes:Routes  =[{
+  path: 'rightBox',
+  component: RightBoxComponent
+}];
 
 @NgModule({
-  declarations: [NewTaskComponent],
+  declarations: [
+    RightBoxComponent
+  ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule
   ]
 })
-export class NewTaskModule { }
+export class RightBoxModule { }

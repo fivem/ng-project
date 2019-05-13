@@ -4,7 +4,7 @@ import {NewTaskComponent} from "./new-task/new-task.component";
 
 const routes: Routes = [
   {
-    path: 'newTask',
+    path: 'newTest',
     component: NewTaskComponent
   }
 ];

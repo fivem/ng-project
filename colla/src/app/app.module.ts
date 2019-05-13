@@ -5,6 +5,7 @@ import { NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import  { NewTaskModule } from './new-task/new-task.module';
+import {RightBoxModule} from "./common/right-box/right-box.module";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import  { NewTaskModule } from './new-task/new-task.module';
     NgbModule,
     BrowserModule,
     AppRoutingModule,
-    NewTaskModule
+    NewTaskModule,
+    RightBoxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
