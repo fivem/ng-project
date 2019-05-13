@@ -1,0 +1,140 @@
+/*全局*/
+.custom{
+  color:brown;
+}
+:host ::ng-deep table.zw_formdata {
+  border-collapse: collapse;
+  width: 100%;
+  /*border: 1px solid #ccc;*/
+  color:#000;
+}
+:host ::ng-deep table.zw_formdata tr {
+  background-color:#fff !important;
+}
+:host ::ng-deep table.zw_formdata th {
+  border: 1px solid #000;
+  color:#000;
+  background-color:#fff !important;
+  white-space:normal !important;
+}
+:host ::ng-deep table.zw_formdata td {
+  border: 1px solid #000;
+  background-color:#fff ;
+  white-space:normal !important;
+}
+:host ::ng-deep table.zw_formdata label {
+  margin-bottom: 0 !important;
+  font-weight:normal;
+  width: 100%;
+}
+:host ::ng-deep table.zw_formdata input.form_type_text {
+  width: 100%;
+  border: none;
+  height: 100%;
+}
+:host ::ng-deep table.zw_formdata input.form_validate {
+  background-color: #fcdd8b;
+}
+:host ::ng-deep table.zw_formdata input.form_validate:focus {
+  background-color: #fff;
+}
+:host ::ng-deep table.zw_formdata input[disabled][readonly]{background-color: #fff;}
+
+/*日期控件*/
+:host ::ng-deep table.zw_formdata a.table_form_icon{
+  /*
+  background-image:url(../images/oa-images/table_form_icon.png)
+  */
+}
+:host ::ng-deep table.zw_formdata a.table_form_icon_sap{
+  background-position:0 0;
+  display: inline-block;
+  height: 19px;
+  width: 19px;
+  vertical-align:middle;
+
+}
+:host ::ng-deep .table_form_input_group {
+  position: relative;
+}
+:host ::ng-deep .table_form_time_sap{
+  position: absolute;
+  top: 20%;
+  vertical-align: middle;
+  right: 3%;
+}
+
+
+/*单选和多选*/
+:host ::ng-deep table.zw_formdata label.form_type_label1 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  vertical-align: middle;
+  width: auto;
+  cursor: pointer;
+}
+:host ::ng-deep table.zw_formdata label.form_type_label1 input {
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+
+/*文本域*/
+:host ::ng-deep table.zw_formdata textarea.form_type_textarea {
+  width: 100%;
+  resize:none;
+  border: none;
+  height: 100%;
+}
+:host ::ng-deep table.zw_formdata textarea.form_validate {
+  background-color: #fcdd8b;
+}
+:host ::ng-deep table.zw_formdata textarea.form_validate:focus {
+  background-color: #fff;
+}
+:host ::ng-deep table.zw_formdata textarea[disabled][readonly]{background-color: #fff;}
+
+
+/*select*/
+:host ::ng-deep table.zw_formdata select.form_type_select {
+  width: 100%;
+  border: none;
+}
+:host ::ng-deep table.zw_formdata select.form_validate {
+  background-color: #fcdd8b;
+}
+:host ::ng-deep table.zw_formdata select.form_validate:focus {
+  background-color: #fff;
+}
+:host ::ng-deep table.zw_formdata select[disabled][readonly]{background-color: #fff;}
+
+
+/*签章*/
+:host ::ng-deep table.zw_formdata img.form_type_signature {
+  width: 240px;
+  height: 60px;
+}
+
+:host ::ng-deep table.zw_formdata i.form_type_icon_pdf{
+  background-position: 0 -45px;
+  height: 22px;
+  width: 22px;
+}
+:host ::ng-deep table.zw_formdata i.form_type_icon_img{
+  background-position: 0 -68px;
+  height: 22px;
+  width: 22px;
+}
+:host ::ng-deep table.zw_formdata i.form_type_icon_office{
+  background-position: 0 1px;
+  height: 22px;
+  width: 22px;
+}
+:host ::ng-deep table.zw_formdata i.form_type_icon_others{
+  background-position: 0 -23px;
+  height: 22px;
+  width: 22px;
+}
+

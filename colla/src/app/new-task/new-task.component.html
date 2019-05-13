@@ -1,8 +1,21 @@
 <section>
-  new-task works!
-  <button class="btn btn-warning" routerLink="/rightBox">newTask</button>
-  <button (click)="getData('http://127.0.0.1:8081/api/colla/process/10000000033132')">测试http</button>
-  <button (click)="postData('http://127.0.0.1:8081/api/login')">测试37</button>
+  <table>
+    <tr>
+      <td>
+        <span class="custom">new-task works!</span>
+        <button class="btn btn-warning" routerLink="/rightBox">newTask</button>
+      </td>
+      <td>
+        <span>测试问题</span>
+      </td>
+      <td>
+        <button (click)="getData('http://127.0.0.1:8081/api/colla/process/10000000400617')">测试http</button>
+        <button (click)="postData('http://127.0.0.1:8081/api/login')">测试37</button>
+      </td>
+    </tr>
+  </table>
+
   <div [innerHTML]="content"></div>
+  <br><br><br><br><br><br>
   <router-outlet></router-outlet>
 </section>
