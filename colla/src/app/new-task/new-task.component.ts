@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NetworkService} from "../common/network/network.service";
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import {JsonPipe} from "@angular/common";
 
 @Component({
   selector: 'app-new-task',
@@ -10,18 +9,29 @@ import {JsonPipe} from "@angular/common";
 })
 export class NewTaskComponent implements OnInit {
   tgt:string;
-  origin:object;
-  content:SafeHtml;
+  origin:string;
+  content:string;
+  data:object;
+  permission:object;
 
   getData(url:String){
-    this.network.get(url,this.tgt)
+    /*this.network.get(url,this.tgt)
       .subscribe((data)=>{
-        let list = data['data']['list'];
-        let form = list[0]['form'];
-        origin = form['formHtml'];
-        this.content = this.domSanitizer.bypassSecurityTrustHtml(origin);
-        console.log(origin);
-    });
+        this.origin = data['data']['list'][0]['form']['formHtml'];
+        this.data = data['data']['list'][0]['data'];
+        this.permission = data['data']['list'][0]['permission']['field'];
+
+        this.content = this.domSanitizer.bypassSecurityTrustHtml(this.origin);
+        console.log(data);
+    });*/
+    let ret = this.network.get(url,this.tgt);
+    this.origin = ret['data']['list'][0]['form']['formHtml'];
+    this.data = ret['data']['list'][0]['data'];
+    this.permission = ret['data']['list'][0]['permission']['field'];
+
+    //this.content = this.domSanitizer.bypassSecurityTrustHtml(this.origin);
+
+    console.log(ret);
   }
   postData(url:String){
     this.network.post(url,"username=zhaopeipei&password=E10ADC3949BA59ABBE56E057F20F883E"
@@ -32,9 +42,11 @@ export class NewTaskComponent implements OnInit {
   }
   constructor(private network : NetworkService,private domSanitizer:DomSanitizer) {
 
+    this.content = `{{data.fgsfksq20171010}}-<input ghaoInput name="data.fgsfksq20171010.sqr"   init-model="data.fgsfksq20171010.initData.sqr" validate="{'required':true}" />`;
   }
 
   ngOnInit() {
+
   }
 
 }

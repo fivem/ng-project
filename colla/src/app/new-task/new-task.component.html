@@ -14,8 +14,14 @@
       </td>
     </tr>
   </table>
+<!--
+  <input ghaoInput name="data.fgsfksq20171010.sqr" permission="fgsfksq20171010.sqr" (ngModel)="data.fgsfksq20171010.sqr" init-model="data.fgsfksq20171010.initData.sqr" validate="{'required':true}" />
+-->
+  <form-content
+               [content]="content">
+  </form-content>
+  <br><br><br>
 
-  <div [innerHTML]="content"></div>
-  <br><br><br><br><br><br>
+  <br><br><br>
   <router-outlet></router-outlet>
 </section>
