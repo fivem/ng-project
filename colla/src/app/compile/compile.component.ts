@@ -1,6 +1,7 @@
 import {Compiler, Component, Input, NgModuleFactory, OnInit,NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'form-content',
@@ -14,6 +15,8 @@ export class CompileComponent implements OnInit {
 
   @Input("content")
   content:string;
+  @Input("data")
+  data:any;
 
   constructor(private compiler:Compiler) { }
 
@@ -24,7 +27,7 @@ export class CompileComponent implements OnInit {
 
   protected createComponentModule(componentType:any){
     @NgModule({
-      imports:[FormsModule],
+      imports:[FormsModule,CommonModule],
       declarations:[
         componentType
       ],
@@ -45,57 +48,12 @@ export class CompileComponent implements OnInit {
       text: any;
       data: any;
       ngOnInit() {
-        this.text = text;
-        this.data = {"data":{
-            "fgsfksq20171010": {
-              "rqxzq": "",
-              "fklxbd": "",
-              "skdw": "",
-              "sqbm": "",
-              "gybzbd": "",
-              "bz": "",
-              "fkfsbd": "",
-              "fgfz": "",
-              "gcglbxmfzrxzbd": "",
-              "bmzg": "",
-              "fph": "",
-              "dh": "",
-              "gjxmfzrxzbd": "",
-              "zp": "",
-              "ssgsbd": "",
-              "gcglbxmfzrxz": "",
-              "jtzjl": "",
-              "sqrID": "",
-              "htbh": "",
-              "lsh": "",
-              "jtcwfz": "",
-              "gscw": "",
-              "fkdwbd": "",
-              "gsfzr": "",
-              "sqr": "申请人",
-              "zgfz": "",
-              "sqbmID": "",
-              "initData": {
-
-              },
-              "fklx": "",
-              "ssgs": "",
-              "fknr": "",
-              "cdhp": "",
-              "gybz": "",
-              "yxzh": "",
-              "jexx": "",
-              "khx": "",
-              "fkdw": "",
-              "fkfs": "",
-              "gjxmfzrxz": "",
-              "bzbd": "",
-              "xxje": "",
-              "jedx": ""
-            }
-          }};
-        //this.data = JSON.stringify(this.data);
-
+        console.log(text);
+        this.data= Object.assign ( {}, this.data )
+      }
+      ngOnChanges(){
+        this.data= Object.assign ( {}, this.data );
+        console.log(this.data);
       }
     }
     return DynamicComponent;
