@@ -41,8 +41,10 @@ export class NewTaskComponent implements OnInit {
     })
   }
   constructor(private network : NetworkService,private domSanitizer:DomSanitizer) {
-    this.data = JSON.parse(`{"data":{"fgsfksq20171010": {"sqr": "申请人"}}}`);
-    this.content = `{{data | json}}-<input ghaoInput name="data.fgsfksq20171010.sqr"  init-model="data.fgsfksq20171010.initData.sqr" validate="{'required':true}" />`;
+    this.data = JSON.parse(`{"fgsfksq20171010": {"sqr": "申请人"}}`);
+    this.content = `{{this | json}}-<input ghaoInput name="data.fgsfksq20171010.sqr" 
+    [(ngModel)]="this.data.fgsfksq20171010.sqr" 
+    init-model="data.fgsfksq20171010.initData.sqr" validate="{'required':true}" />`;
   }
 
   ngOnInit() {

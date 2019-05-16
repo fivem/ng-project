@@ -21,7 +21,8 @@ export class CompileComponent implements OnInit {
   constructor(private compiler:Compiler) { }
 
   ngOnInit() {
-    this.dynamicComponent = this.createNewComponent(this.content);
+    //this.data = JSON.stringify(this.data);
+    this.dynamicComponent = this.createNewComponent(this.content,this.data);
     this.dynamicModule = this.compiler.compileModuleSync(this.createComponentModule(this.dynamicComponent));
   }
 
@@ -37,8 +38,8 @@ export class CompileComponent implements OnInit {
   return RuntimeComponentModule;
   }
 
-  protected createNewComponent (text:string) {
-    let template = `dynamically created template with text: ${text}`;
+  protected createNewComponent (text:string,data:any) {
+    let template = `dynamically created template with text: ${text} `;
 
     @Component({
       selector: 'dynamic-component',
@@ -48,12 +49,17 @@ export class CompileComponent implements OnInit {
       text: any;
       data: any;
       ngOnInit() {
-        console.log(text);
-        this.data= Object.assign ( {}, this.data )
-      }
-      ngOnChanges(){
-        this.data= Object.assign ( {}, this.data );
+        debugger
+        this.data = data;
         console.log(this.data);
+      }
+      ngAfterContentInit(){
+        debugger
+        console.log(data);
+      }
+      ngAfterViewInit(){
+        debugger
+        console.log(data);
       }
     }
     return DynamicComponent;
