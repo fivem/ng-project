@@ -49,17 +49,8 @@ export class CompileComponent implements OnInit {
       text: any;
       data: any;
       ngOnInit() {
-        debugger
         this.data = data;
         console.log(this.data);
-      }
-      ngAfterContentInit(){
-        debugger
-        console.log(data);
-      }
-      ngAfterViewInit(){
-        debugger
-        console.log(data);
       }
     }
     return DynamicComponent;
