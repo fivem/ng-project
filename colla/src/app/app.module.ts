@@ -5,8 +5,9 @@ import { NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import  { NewTaskModule } from './new-task/new-task.module';
-import {RightBoxModule} from "./common/right-box/right-box.module";
+import { RightBoxModule } from "./common/right-box/right-box.module";
 import { HttpClientModule } from '@angular/common/http';
+import { TodoTaskModule } from "./todo-task/todo-task.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NewTaskModule,
     RightBoxModule,
-    HttpClientModule
+    HttpClientModule,
+    TodoTaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
