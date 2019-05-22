@@ -2,6 +2,8 @@ import {Compiler, Component, Input, NgModuleFactory, OnInit,NgModule} from '@ang
 import { CommonModule } from '@angular/common';
 
 import {FormsModule} from '@angular/forms';
+import {InputDirective} from "../directive/input.directive";
+
 
 @Component({
   selector: 'form-content',
@@ -30,7 +32,8 @@ export class CompileComponent implements OnInit {
     @NgModule({
       imports:[FormsModule,CommonModule],
       declarations:[
-        componentType
+        componentType,
+        InputDirective
       ],
       entryComponents: [componentType]
     })
