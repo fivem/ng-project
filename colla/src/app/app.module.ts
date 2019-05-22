@@ -8,6 +8,7 @@ import  { NewTaskModule } from './new-task/new-task.module';
 import { RightBoxModule } from "./common/right-box/right-box.module";
 import { HttpClientModule } from '@angular/common/http';
 import { TodoTaskModule } from "./todo-task/todo-task.module";
+import { FormToolModule } from './form-tool/form-tool.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TodoTaskModule } from "./todo-task/todo-task.module";
     NewTaskModule,
     RightBoxModule,
     HttpClientModule,
-    TodoTaskModule
+    TodoTaskModule,
+    FormToolModule
   ],
   providers: [],
   bootstrap: [AppComponent]
