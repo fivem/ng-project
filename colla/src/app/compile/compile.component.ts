@@ -42,7 +42,7 @@ export class CompileComponent implements OnInit {
   }
 
   protected createNewComponent (text:string,data:any) {
-    let template = `dynamically created template with text: ${text} `;
+    let template = `${text}`;
 
     @Component({
       selector: 'dynamic-component',
