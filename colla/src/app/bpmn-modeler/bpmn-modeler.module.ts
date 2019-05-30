@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormToolComponent} from './form-tool.component';
+import { BpmnModelerComponent} from './bpmn-modeler.component';
 import { Routes, RouterModule} from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'formTool',
-    component: FormToolComponent
+    path: 'bpmn-modeler',
+    component: BpmnModelerComponent
   }
 ];
-
 @NgModule({
-  declarations: [FormToolComponent],
+  declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
   ]
 })
-export class FormToolModule { }
+export class BpmnModelerModule { }
