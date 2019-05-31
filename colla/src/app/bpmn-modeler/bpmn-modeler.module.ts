@@ -10,7 +10,7 @@ const routes: Routes = [
   }
 ];
 @NgModule({
-  declarations: [],
+  declarations: [BpmnModelerComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)
