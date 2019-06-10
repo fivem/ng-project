@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BpmnModelerComponent } from './bpmn-modeler/bpmn-modeler.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BpmnModelerComponent
   ],
   imports: [
     BrowserModule,
