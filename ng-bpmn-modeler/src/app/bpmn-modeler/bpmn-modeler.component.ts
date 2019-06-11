@@ -30,6 +30,13 @@ export class BpmnModelerComponent implements OnInit {
     this.modeler = new BpmnModeler({
       container: '#js-canvas'
     });
+    this.modeler.on('selection.changed', (e) => {
+      console.log(e.newSelection[0]);
+    });
+
+    this.modeler.on('element.changed', (e) => {
+      console.log(e.element);
+    });
     this.modeler.importXML(this.initData, (err) => {
       if (err) {
         console.error(err);
