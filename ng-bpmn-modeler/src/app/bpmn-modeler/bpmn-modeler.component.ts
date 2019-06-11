@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import BpmnModeler from 'bpmn-js/lib/Modeler';
+import propertiesPanelModule from 'bpmn-js-properties-panel';
+import propertiesProvider from 'bpmn-js-properties-panel/lib/provider/camunda';
+import { CamundaDescriptor } from './camunda-descriptor';
 
 @Component({
   selector: 'app-bpmn-modeler',
@@ -28,7 +31,20 @@ export class BpmnModelerComponent implements OnInit {
   }
   initBpmn() {
     this.modeler = new BpmnModeler({
-      container: '#js-canvas'
+      container: '#js-canvas',
+      height: 900,
+      width: '75%',
+      propertiesPanel: {
+        parent: '#js-properties-panel'
+      },
+      additionalModules: [
+        propertiesProvider,
+        propertiesPanelModule
+      ],
+      moddleExtensions: {
+        camunda: CamundaDescriptor
+      }
+
     });
     this.modeler.on('selection.changed', (e) => {
       console.log(e.newSelection[0]);
