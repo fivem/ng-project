@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {NewTaskComponent} from "./new-task/new-task.component";
 
 const routes: Routes = [
-  {
-    path: 'newTest',
-    component: NewTaskComponent
-  }
+  {path: ``, redirectTo: `/login`, pathMatch: `full`},
+  {path: `login`, loadChildren: './login/login.module#LoginModule' },
+
 ];
 
 @NgModule({

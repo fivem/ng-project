@@ -6,10 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewTaskModule } from './new-task/new-task.module';
 import { RightBoxModule } from './common/right-box/right-box.module';
+// @ts-ignore
 import { HttpClientModule } from '@angular/common/http';
 import { TodoTaskModule } from './todo-task/todo-task.module';
 import { FormToolModule } from './form-tool/form-tool.module';
 import { BpmnModelerModule } from './bpmn-modeler/bpmn-modeler.module';
+import { LoginModule } from './login/login.module';
+import { MainModule } from './main/main.module';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,9 @@ import { BpmnModelerModule } from './bpmn-modeler/bpmn-modeler.module';
     HttpClientModule,
     TodoTaskModule,
     FormToolModule,
-    BpmnModelerModule
+    BpmnModelerModule,
+    LoginModule,
+    MainModule
   ],
   providers: [],
   bootstrap: [AppComponent]
