@@ -6,6 +6,6 @@
           <input class="form-control" placeholder="验证码" [(ngModel)]="ValidCode"/>
           <canvas id="ValidCodeCanvas" (click)="refreshCode()"></canvas>
         </div>
-        <button class="form-control">登录</button>
+        <button class="form-control" (click)="login()">登录</button>
     </div>
 </div>

@@ -6,8 +6,7 @@ import {MainComponent} from './main.component';
 const routes: Routes = [
   {
     path: 'main',
-    component: MainComponent,
-    outlet: 'main'
+    component: MainComponent
   }
 ];
 @NgModule({
