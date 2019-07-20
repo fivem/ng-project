@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NetworkService} from "../common/network/network.service";
+import {NetworkService} from '../common/network/network.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
@@ -8,13 +8,13 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./new-task.component.scss']
 })
 export class NewTaskComponent implements OnInit {
-  tgt:string;
-  origin:string;
-  content:string;
-  data:object;
-  permission:object;
+  tgt: string;
+  origin: string;
+  content: string;
+  data: object;
+  permission: object;
 
-  getData(url:String){
+  getData(url: string) {
     /*this.network.get(url,this.tgt)
       .subscribe((data)=>{
         this.origin = data['data']['list'][0]['form']['formHtml'];
@@ -24,23 +24,23 @@ export class NewTaskComponent implements OnInit {
         this.content = this.domSanitizer.bypassSecurityTrustHtml(this.origin);
         console.log(data);
     });*/
-    let ret = this.network.get(url,this.tgt);
-    this.origin = ret['data']['list'][0]['form']['formHtml'];
-    this.data = ret['data']['list'][0]['data'];
-    this.permission = ret['data']['list'][0]['permission']['field'];
+    const ret = this.network.get(url, this.tgt);
+    /*this.origin = ret.data.list[0].form.formHtml;
+    this.data = ret.data.list[0].data;
+    this.permission = ret.data.list[0].permission.field;*/
 
-    //this.content = this.domSanitizer.bypassSecurityTrustHtml(this.origin);
+    // this.content = this.domSanitizer.bypassSecurityTrustHtml(this.origin);
 
     console.log(ret);
   }
-  postData(url:String){
-    this.network.post(url,"username=zhaopeipei&password=E10ADC3949BA59ABBE56E057F20F883E"
-    ).subscribe((data)=>{
+  postData(url: string) {
+    this.network.post(url, 'username=zhaopeipei&password=E10ADC3949BA59ABBE56E057F20F883E'
+    ).subscribe((data) => {
       this.tgt = data;
       console.log(data);
-    })
+    });
   }
-  constructor(private network : NetworkService,private domSanitizer:DomSanitizer) {
+  constructor(private network: NetworkService, private domSanitizer: DomSanitizer) {
     this.data = JSON.parse(`
       {
 				"jtfk20171011": {
@@ -48,7 +48,7 @@ export class NewTaskComponent implements OnInit {
 					"bz": "ba2f761aaee64d3e9a6504dd2927091c",
 					"htbh": "LS-B-0501-22",
 					"initData": {
-						
+
 					},
 					"ssgs": "39fc2b2999b847dfa926fc07dc74cb22",
 					"jt10jfzcqmjbd": "人资",
@@ -72,55 +72,55 @@ export class NewTaskComponent implements OnInit {
 			}
     `);
     this.permission = {
-      "fields": {
-        "jtfk20171011": {
-          "rqxzq": "w",
-          "skdw": "w",
-          "sqbm": "w",
-          "jt10jfzcqmj": "w",
-          "gynqxz": "n",
-          "bz": "w",
-          "fgfz": "r",
-          "bmzg": "r",
-          "jtfz": "r",
-          "gybbzxz": "n",
-          "fph": "w",
-          "dh": "w",
-          "zp": "w",
-          "jtzjl": "r",
-          "sqrID": "w",
-          "htbh": "w",
-          "xyjckbmxz": "n",
-          "jtzjl29": "w",
-          "lsh": "w",
-          "jtzjl28": "w",
-          "jtcwfz": "r",
-          "gscw": "r",
-          "sqr": "w",
-          "sqbmID": "w",
-          "fklx": "w",
-          "ssgs": "w",
-          "tzcfbzxz": "n",
-          "jtcwjl": "r",
-          "cdhp": "w",
-          "fknr": "w",
-          "jexx": "w",
-          "yxzh": "w",
-          "cwbzxz": "n",
-          "khx": "w",
-          "fkdw": "w",
-          "fkfs": "w",
-          "fgszjlmj": "n",
-          "fgszjl": "r",
-          "zjjlxz": "n",
-          "jedx": "w"
+      fields: {
+        jtfk20171011: {
+          rqxzq: 'w',
+          skdw: 'w',
+          sqbm: 'w',
+          jt10jfzcqmj: 'w',
+          gynqxz: 'n',
+          bz: 'w',
+          fgfz: 'r',
+          bmzg: 'r',
+          jtfz: 'r',
+          gybbzxz: 'n',
+          fph: 'w',
+          dh: 'w',
+          zp: 'w',
+          jtzjl: 'r',
+          sqrID: 'w',
+          htbh: 'w',
+          xyjckbmxz: 'n',
+          jtzjl29: 'w',
+          lsh: 'w',
+          jtzjl28: 'w',
+          jtcwfz: 'r',
+          gscw: 'r',
+          sqr: 'w',
+          sqbmID: 'w',
+          fklx: 'w',
+          ssgs: 'w',
+          tzcfbzxz: 'n',
+          jtcwjl: 'r',
+          cdhp: 'w',
+          fknr: 'w',
+          jexx: 'w',
+          yxzh: 'w',
+          cwbzxz: 'n',
+          khx: 'w',
+          fkdw: 'w',
+          fkfs: 'w',
+          fgszjlmj: 'n',
+          fgszjl: 'r',
+          zjjlxz: 'n',
+          jedx: 'w'
         }
       }
     };
     /*this.content = `<input ghaoInput name="data.fgsfksq20171010.sqr"
     [(ngModel)]="this.data.fgsfksq20171010.sqr"
     init-model="data.fgsfksq20171010.initData.sqr" validate="{'required':true}" />`;*/
-    this.content =`
+    this.content = `
       <div align="center" style="padding-top: 30px;">
 <style>
     .zw_formdata th{
@@ -171,7 +171,8 @@ font-size: 14px;
         text-align: center;
     }
 </style>
-<table class="zw_formdata" style="WORD-WRAP: break-word; BORDER-TOP: medium none; BORDER-RIGHT: medium none; WIDTH: 677px; BORDER-COLLAPSE: collapse; TABLE-LAYOUT: fixed; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none" bordercolor="buttontext" border="0">
+<table class="zw_formdata" style="WORD-WRAP: break-word; BORDER-TOP: medium none; BORDER-RIGHT: medium none; WIDTH: 677px;
+BORDER-COLLAPSE: collapse; TABLE-LAYOUT: fixed; BORDER-BOTTOM: medium none; BORDER-LEFT: medium none" bordercolor="buttontext" border="0">
 <colgroup>
     <col style="WIDTH: 71px" />
     <col style="WIDTH: 42px" />
@@ -195,7 +196,7 @@ font-size: 14px;
     <th  ng-if="permission.fields.jtfk20171011.fklx!='n'" style="border: 0px;" > 付款类型:</th>
     <td class="form_text_color_blue "  ng-if="permission.fields.jtfk20171011.fklx!='n'" colspan="5" style="border: 0px;">
         <div class="zw-select-div-width cellphone-nowrap-ellipsis">
-               
+
             </div>
     </td>
     <th  ng-if="permission.fields.jtfk20171011.ssgs!='n'" style="border: 0px;"   colspan="2" >  </th>
@@ -207,7 +208,7 @@ font-size: 14px;
     <th ng-if="permission.fields.jtfk20171011.fkdw!='n'" style="border: 0px;"> 付款单位:</th>
     <td class="form_text_color_blue " ng-if="permission.fields.jtfk20171011.fkdw!='n'" colspan="5" style="border: 0px;">
         <div class="zw-select-div-width cellphone-nowrap-ellipsis">
-            
+
         </div>
     </td>
     <th ng-if="permission.fields.jtfk20171011.lsh!='n'" style="border: 0px;text-align: right;"> NO. </th>
@@ -217,9 +218,11 @@ font-size: 14px;
     <th ng-if="permission.fields.jtfk20171011.rqxzq!='n'" colspan="2" style="border: 0px; text-align: right;"> 申请日期: </th>
     <td class="form_text_color_blue" ng-if="permission.fields.jtfk20171011.rqxzq!='n'" colspan="3"  style="border: 0px;">
         <div class="table_form_input_group">
-            <input desc="日期选择器" class="form_type_text" type="text" [(ngModel)]="data.jtfk20171011.rqxzq" permission="permission.fields.jtfk20171011.rqxzq"  zw-validate="{'required':true,'date':true}" zw-date="yyyy-mm-dd"
+            <input desc="日期选择器" class="form_type_text" type="text" [(ngModel)]="data.jtfk20171011.rqxzq"
+            permission="permission.fields.jtfk20171011.rqxzq"  zw-validate="{'required':true,'date':true}" zw-date="yyyy-mm-dd"
                    data-init-model="init.user.sysdate" disabled />
-            <span class="fa fa-calendar table_form_time_sap" ng-class="{'r':'none'}[permission.fields.jtfk20171011.rqxzq]"></span><span ng-show="flag">{{ data.jtfk20171011.rqxzq | date: 'yyyy-MM-dd'}}</span>
+            <span class="fa fa-calendar table_form_time_sap" ng-class="{'r':'none'}[permission.fields.jtfk20171011.rqxzq]">
+</span><span ng-show="flag">{{ data.jtfk20171011.rqxzq | date: 'yyyy-MM-dd'}}</span>
         </div>
     </td>
 </tr>
@@ -227,12 +230,14 @@ font-size: 14px;
     <th ng-if="permission.fields.jtfk20171011.sqbm!='n'" style="height: 40px;" colspan="3"> 申请付款部门 </th>
     <td class="form_text_color_blue" ng-if="permission.fields.jtfk20171011.sqbm!='n'" colspan="4">
         <input zw-input="data.jtfk20171011.sqbm" desc="申请部门"  class="form_type_text" data-init-model="init.user.dept" type="text"
-               [(ngModel)]="data.jtfk20171011.sqbm" permission="permission.fields.jtfk20171011.sqbm"  zw-validate="{'maxLength':255,'required':true}" />
+               [(ngModel)]="data.jtfk20171011.sqbm" permission="permission.fields.jtfk20171011.sqbm"
+               zw-validate="{'maxLength':255,'required':true}" />
     </td>
     <th ng-if="permission.fields.jtfk20171011.sqr!='n'" colspan="3"> 付款申请人 </th>
     <td class="form_text_color_blue" ng-if="permission.fields.jtfk20171011.sqr!='n'" colspan="3">
         <input zw-input="data.jtfk20171011.sqr" desc="申请人"  class="form_type_text" data-init-model="init.user.name" type="text"
-               [(ngModel)]="data.jtfk20171011.sqr" permission="permission.fields.jtfk20171011.sqr"  zw-validate="{'maxLength':255,'required':true}" />
+               [(ngModel)]="data.jtfk20171011.sqr" permission="permission.fields.jtfk20171011.sqr"
+               zw-validate="{'maxLength':255,'required':true}" />
     </td>
 </tr>
 <tr style="MIN-HEIGHT: 4px">
@@ -254,13 +259,15 @@ font-size: 14px;
     </th>
     <td class="form_text_color_blue" ng-if="permission.fields.jtfk20171011.bz!='n'" colspan="2" rowspan="2">
         <div class="zw-select-div-width" >
-            
+
         </div>
     </td>
     <th ng-if="permission.fields.jtfk20171011.jexx!='n'"> 金额小写 </th>
     <td class="form_text_color_blue" ng-if="permission.fields.jtfk20171011.jexx!='n'" colspan="5">
         <input desc="金额小写"  class="form_type_text" type="text" [(ngModel)]="data.jtfk20171011.jexx"
-               permission="permission.fields.jtfk20171011.jexx"  zw-validate="{'required':true,'maxDecimalLen':2,'maxIntLen':30,'number':true}" zw-number="{'isShowComdify':true,'decimalValue':'2','intValue':''}" />
+               permission="permission.fields.jtfk20171011.jexx"
+               zw-validate="{'required':true,'maxDecimalLen':2,'maxIntLen':30,'number':true}"
+               zw-number="{'isShowComdify':true,'decimalValue':'2','intValue':''}" />
     </td>
 </tr>
 <tr style="MIN-HEIGHT: 4px">
@@ -282,7 +289,7 @@ font-size: 14px;
 <tr style="MIN-HEIGHT: 4px">
     <td class="form_text_color_blue" ng-if="permission.fields.jtfk20171011.fkfs!='n'" colspan="3" rowspan="2">
         <div class="zw-select-div-width">
-            
+
         </div>
     </td>
     <th ng-if="permission.fields.jtfk20171011.khx!='n'" colspan="4"> 开户银行 </th>
@@ -294,7 +301,8 @@ font-size: 14px;
 <tr style="MIN-HEIGHT: 4px">
     <th ng-if="permission.fields.jtfk20171011.yxzh!='n'" colspan="4"> 银行账号 </th>
     <td class="form_text_color_blue" ng-if="permission.fields.jtfk20171011.yxzh!='n'" colspan="6">
-        <input zw-bank="" formater = "{separator:'',size:4}" class="form_type_text" data-init="" type="text" [(ngModel)]="data.jtfk20171011.yxzh"
+        <input zw-bank="" formater = "{separator:'',size:4}" class="form_type_text" data-init="" type="text"
+        [(ngModel)]="data.jtfk20171011.yxzh"
                permission="permission.fields.jtfk20171011.yxzh"  zw-validate="{'maxLength':255,'required':false}" />
     </td>
 </tr>
@@ -324,7 +332,8 @@ font-size: 14px;
         付款内容
     </th>
     <td class="form_text_color_blue" ng-if="permission.fields.jtfk20171011.fknr!='n'" colspan="10" style="height: 50px;">
-        <textarea style="height: 48px;" zw-textarea="data.jtfk20171011.fknr" desc="付款内容" data-init='' class="form_type_textarea" [(ngModel)]="data.jtfk20171011.fknr"
+        <textarea style="height: 48px;" zw-textarea="data.jtfk20171011.fknr" desc="付款内容" data-init=''
+        class="form_type_textarea" [(ngModel)]="data.jtfk20171011.fknr"
                   permission="permission.fields.jtfk20171011.fknr"  zw-validate="{'required':false}" > </textarea>
     </td>
 </tr>
@@ -332,7 +341,7 @@ font-size: 14px;
 </table>
 </div>
 
- 
+
 -{{items}}-
     `;
   }
